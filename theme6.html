@@ -10,7 +10,8 @@
  |
  |  Theme #6 by raiidens (@ tumblr)
  |  Published October 2015
- |  Ver. 1.01
+ |  Updated November 2015
+ |  Ver. 1.06
  |
  |  Edit as much as you like, but please do not
  |  claim as your own work, and leave credit somewhere.
@@ -23,6 +24,8 @@
 <meta name="if:Always show tags" content="0">
 <meta name="if:Disable character" content="0">
 <meta name="if:Disable battle info" content="0">
+<meta name="if:Customize main nav buttons" content="0">
+<meta name="if:Disable main nav icons" content="0">
 <meta name="if:Mirror layout" content="0">
 <meta name="if:Black and white images" content="0">
 <meta name="if:Color images over hover" content="0">
@@ -42,7 +45,7 @@
 <meta name="color:Sidebar bold text" content="#FFFFFF">
 <meta name="color:Sidebar italic text" content="#FFFFFF">
 <meta name="color:Sidebar scrollbar" content="gray">
-<meta name="color:Sidebar scrollbar background" content="#FFFFFF">
+<meta name="color:Sidebar scrollbar background" content="#000000">
 <meta name="color:Navigation main text" content="#F68228">
 <meta name="color:Navigation main border" content="#F68228">
 <meta name="color:Navigation main background" content="#000000">
@@ -81,6 +84,13 @@
 <meta name="text:Link 3 URL" content="">
 <meta name="text:Link 4 Title" content="Link 4">
 <meta name="text:Link 4 URL" content="">
+
+<meta name="font:Post font" content="'8bitoperator', 'Press Start 2P'">
+<meta name="font:Post title font" content="'8bitoperator', 'Press Start 2P'">
+<meta name="font:Sidebar font" content="'8bitoperator', 'Press Start 2P'">
+<meta name="font:Navigation font" content="'8bitoperator', 'Press Start 2P'">
+
+<link href='https://fonts.googleapis.com/css?family=Press+Start+2P|VT323' rel='stylesheet' type='text/css'>
 
 {block:IfInfiniteScrolling}
 <script type="text/javascript" src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
@@ -131,7 +141,7 @@ p {margin:10px; margin-bottom:10px;}
 body {
     background-color:{color:Background};
     color:{color:Post text};
-    font-family:"8bitoperator";
+    font-family:{font:Post font};
 	background-image:url('{image:Background image}');
     background-attachment:fixed;
     overflow-y:auto;
@@ -165,7 +175,12 @@ blockquote {
     text-align:justify;
 }
 blockquote p {display:block!important;}
-blockquote img {max-width:220px!important;}
+blockquote img {
+    display:block;
+    max-width:450px;
+    width:auto;
+    height:auto;
+}
  
 #posts {{block:IfNotMirrorLayout}float:left;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}float:right;{/block:IfMirrorLayout} height:auto;}
  
@@ -178,7 +193,7 @@ blockquote img {max-width:220px!important;}
     height: 100%;
     margin-top:10px;
     padding:10px 10px 10px 10px;
-    font-family:"8bitoperator";
+    font-family:{font:Post font};
     font-size:10px;
 }
 .post b {color:{color:Post bold text};}
@@ -189,7 +204,7 @@ blockquote img {max-width:220px!important;}
     font-size: 2em;
     overflow:visible;
     color:{color:Post title};
-    font-family:"8bitoperator";
+    font-family:{font:Post title font};
 }
  
 .caption blockquote {padding-left: 20px;}
@@ -314,7 +329,7 @@ ol.notes li.note{
 .posttitle {
     color:{color:Post title};
     text-align:left;
-    font-family:"8bitoperator";
+    font-family:{font:Post title font};
     padding:3px 0 3px 20px;
 }
 .posttitle a {
@@ -357,6 +372,7 @@ ol.notes li.note{
     right:50%;
     margin-right:-150px;
     {/block:IfMirrorLayout}
+    z-index:99;
     -webkit-transition: all 0.7s ease-in-out;
     -moz-transition: all 0.7s ease-in-out;
     -o-transition: all 0.7s ease-in-out;
@@ -380,19 +396,19 @@ ol.notes li.note{
 }
 
 #desccont {
-    height:90px;
+    height:auto;
     position:relative;
     background-color:{color:Sidebar background};
     color:{color:Sidebar text};
     border:solid 5px {color:Sidebar border};
-    font-family:"8bitoperator";
+    font-family:{font:Sidebar font};
     padding:8px 8px 8px 8px;
     width:372px;
 }
 #desccont b {color:{Sidebar bold text};}
 #desccont i {color:{Sidebar italic text};}
 #desc {
-    max-height:65px;
+    max-height:59px;
     font-size:10px;
     padding:3px 3px 3px 3px;
     overflow-y:scroll;
@@ -410,24 +426,28 @@ ol.notes li.note{
 
 #ginfo {
     position:relative;
-    font-family:"Mars Needs Cunnilingus";
+    font-family:"Mars Needs Cunnilingus", 'VT323';
     font-size:16px;
     text-transform:uppercase;
 }
 #ginfo img {vertical-align:middle;}
 
-#mlink1, #mlink2, #mlink3, #mlink4 {
+#mlink1, #mlink2, #mlink3, #mlink4, #mlink1f, #mlink2f, #mlink3f, #mlink4f, #mlink1fh, #mlink2fh, #mlink3fh, #mlink4fh {
     {block:IfDisableBattleInfo}margin-top:8px;{/block:IfDisableBattleInfo}
     width:85px;
     height:30px;
     position:absolute;
+    background-repeat:no-repeat;
+    padding:0px 2px 0px 2px;
+}
+#mlink1, #mlink2, #mlink3, #mlink4 {
     border:solid 2px {color:Navigation main border};
+    {block:IfNotCustomizeMainNavButtons}border:solid 2px #F68228;{/block:IfNotCustomizeMainNavButtons}
     color:{color:Navigation main text};
     background-color:{color:Navigation main background};
     text-align:right;
-    padding:0px 2px 0px 2px;
     font-size:20px;
-    font-family:"8bitoperator";
+    font-family:{font:Navigation font};
     text-transform:uppercase;
 }
 #mlink1ic, #mlink2ic, #mlink3ic, #mlink4ic {
@@ -464,12 +484,13 @@ ol.notes li.note{
     margin-top:5px;
     margin-left:0px;
 }
-#mlink1 {left:0px;}
-#mlink2 {left:102px; letter-spacing:4px;}
-#mlink3 {left:204px; letter-spacing:4px;}
-#mlink4 {left:306px; letter-spacing:-2px;}
+#mlink1, #mlink1f, #mlink1fh {left:0px;}
+#mlink2, #mlink2f, #mlink2fh {left:102px; letter-spacing:4px;}
+#mlink3, #mlink3f, #mlink3fh {left:204px; letter-spacing:4px;}
+#mlink4, #mlink4f, #mlink4fh {left:306px; letter-spacing:-2px;}
 #mlink1:hover, #mlink2:hover, #mlink3:hover, #mlink4:hover {
     border:solid 2px {color:Navigation main border hover};
+    {block:IfNotCustomizeMainNavButtons}border:solid 2px #FFF434;{/block:IfNotCustomizeMainNavButtons}
     color:{color:Navigation main text hover};
     background-color:{color:Navigation main background hover};
 }
@@ -479,6 +500,23 @@ ol.notes li.note{
     margin-top:6px;
     margin-left:2px;
 }
+#mlink1f, #mlink2f, #mlink3f, #mlink4f, #mlink1fh, #mlink2fh, #mlink3fh, #mlink4fh {
+    z-index:9;
+    top:-2px;
+    left:-2px;
+    width:87px;
+}
+#mlink1fh, #mlink2fh, #mlink3fh, #mlink4fh {z-index:10;}
+#mlink1f {background-image:url('http://static.tumblr.com/o4povtk/AQqnwh5ib/t6i1.png');}
+#mlink2f {background-image:url('http://static.tumblr.com/o4povtk/fuWnwh6im/t6i2.png');}
+#mlink3f {background-image:url('http://static.tumblr.com/o4povtk/PUKnwh6l4/t6i3.png');}
+#mlink4f {background-image:url('http://static.tumblr.com/o4povtk/1cunwh6ll/t6i4.png');}
+#mlink1fh {background-image:url('http://static.tumblr.com/o4povtk/ogynwh6eh/t6i1h.png');}
+#mlink2fh {background-image:url('http://static.tumblr.com/o4povtk/aOTnwh6kt/t6i2h.png');}
+#mlink3fh {background-image:url('http://static.tumblr.com/o4povtk/Z5Unwh6ld/t6i3h.png');}
+#mlink4fh {background-image:url('http://static.tumblr.com/o4povtk/1JPnwh6ls/t6i4h.png');}
+#mlink1fh, #mlink2fh, #mlink3fh, #mlink4fh {opacity:0.0;}
+#mlink1:hover #mlink1fh, #mlink2:hover #mlink2fh, #mlink3:hover #mlink3fh, #mlink4:hover #mlink4fh {opacity:1.0;}
 
 #nav {
     overflow:hidden;
@@ -495,7 +533,7 @@ ol.notes li.note{
 
 #navlink {
     width:88px;
-    height:18px;
+    height:auto;
     margin-top:5px;
     background-color:{color:Navigation link background};
     color:{color:Navigation link};
@@ -516,6 +554,7 @@ ol.notes li.note{
     {block:IfNotMirrorLayout}left:50%;{/block:IfNotMirrorLayout}
     {block:IfMirrorLayout}right:50%;{/block:IfMirrorLayout}
     text-align:center;
+	z-index:999999;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -535,15 +574,15 @@ ol.notes li.note{
     {block:IfNotDisableBattleInfo}<div id="ginfo">
         <table style="width:300px;"><tr><td>{text:Your name}</td><td>LV 1</td><td width="20px;"></td><td><img src="http://static.tumblr.com/o4povtk/npDnwf8bm/1__0_00_00_00_.png" width="53px" height="20px"> 20 / 20</td></tr></table>
     </div>{/block:IfNotDisableBattleInfo}
-    <a href="/"><div id="mlink1"><div id="mlink1ic"></div>HOME</div></a>
-    <a href="/ask"><div id="mlink2"><div id="mlink2ic"></div>ASK</div></a>
-    <a href=""><div id="mlink3"><div id="nav">
+    <a href="/"><div id="mlink1">{block:IfNotCustomizeMainNavButtons}<div id="mlink1f"></div><div id="mlink1fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink1ic"></div>{/block:IfNotDisableMainNavIcons}HOME</div></a>
+    <a href="/ask"><div id="mlink2">{block:IfNotCustomizeMainNavButtons}<div id="mlink2f"></div><div id="mlink2fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink2ic"></div>{/block:IfNotDisableMainNavIcons}ASK</div></a>
+    <a href=""><div id="mlink3">{block:IfNotCustomizeMainNavButtons}<div id="mlink3f"></div><div id="mlink3fh"></div>{/block:IfNotCustomizeMainNavButtons}<div id="nav">
         {block:IfLink1Title}<a href="{text:Link 1 URL}"><div id="navlink"><center>{text:Link 1 Title}</center></div></a>{/block:IfLink1Title}
         {block:IfLink2Title}<a href="{text:Link 2 URL}"><div id="navlink"><center>{text:Link 2 Title}</center></div></a>{/block:IfLink2Title}
         {block:IfLink3Title}<a href="{text:Link 3 URL}"><div id="navlink"><center>{text:Link 3 Title}</center></div></a>{/block:IfLink3Title}
         {block:IfLink4Title}<a href="{text:Link 4 URL}"><div id="navlink"><center>{text:Link 4 Title}</center></div></a>{/block:IfLink4Title}
-    </div><div id="mlink3ic"></div>NAV</div></a>
-    <a href="http://raiidens.tumblr.com"><div id="mlink4"><div id="mlink4ic"></div>THEME</div></a>
+    </div>{block:IfNotDisableMainNavIcons}<div id="mlink3ic"></div>{/block:IfNotDisableMainNavIcons}NAV</div></a>
+    <a href="http://raiidens.tumblr.com/tagged/themesbyraiidens"><div id="mlink4">{block:IfNotCustomizeMainNavButtons}<div id="mlink4f"></div><div id="mlink4fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink4ic"></div>{/block:IfNotDisableMainNavIcons}THEME</div></a>
 </div>
 
 {block:IfShowPaginationButtons}{block:Pagination}
@@ -682,7 +721,7 @@ ol.notes li.note{
             {/block:Audio}
            
            
-            <table style="width:500px;"><tr><td style="width:425px;">{block:IfAlwaysShowTags}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag}</a></span>{/block:Tags}{/block:HasTags}{/block:IfAlwaysShowTags}{block:IfNotAlwaysShowTags}{block:PermalinkPage}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag}</a></span>{/block:Tags}{/block:HasTags}{/block:PermalinkPage}{/block:IfNotAlwaysShowTags}</td><td>{LikeButton}</td><td>{ReblogButton}</td></tr></table>
+            <table style="width:500px;"><tr><td style="width:425px;">{block:IfAlwaysShowTags}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag}</a></span>{/block:Tags}{/block:HasTags}{/block:IfAlwaysShowTags}{block:IfNotAlwaysShowTags}{block:PermalinkPage}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag} </a></span>{/block:Tags}{/block:HasTags}{/block:PermalinkPage}{/block:IfNotAlwaysShowTags}</td><td>{LikeButton}</td><td>{ReblogButton}</td></tr></table>
            
             </div></li>
             {block:PostNotes}<div class="pagenotes">{PostNotes}</div>{/block:PostNotes}
