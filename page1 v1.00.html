@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+ 
+<!--
+ |
+ |  Page Theme #1 by raiidens (@ tumblr)
+ |  Published November 2015
+ |  Ver. 1.00
+ |
+ |  Edit as much as you like, but please do not
+ |  claim as your own work, and leave credit somewhere.
+ |
+ -->
+ 
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Press+Start+2P|VT323' rel='stylesheet' type='text/css'>
+ 
+<style type="text/css">
+@font-face {
+    font-family: "8bitoperator";
+    src: url("http://static.tumblr.com/o4povtk/wojnwfrxb/8bitoperator.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Mars Needs Cunnilingus";
+    src: url("https://dl.dropboxusercontent.com/s/1gkwsqyfhycd0vj/MarsNeedsCunnilingus.ttf?dl=0") format("truetype");
+}
+
+.tooltiptheme {
+    border-radius:5px;
+    padding:8px;
+    background:black;
+    color:white;
+    font-variant:small-caps;
+    font-size:10pt;
+    line-height:16px;
+}
+
+::-webkit-scrollbar {
+    width:6px;
+    height:4px;
+    background:;
+}
+::-webkit-scrollbar-thumb {
+    background-color:#EEEEEE;
+    border: 1px double #EEEEEE;
+}
+
+html, body, p, h1, h2, h3, h4, h5, h6, blockquote {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+p {margin:10px; margin-bottom:10px;}
+body {
+    background-color:#000000;
+    color:#FFFFFF;
+    font-family:Helvetica;
+    font-size:12px;
+    background-attachment:fixed;
+    overflow:hidden;
+}
+
+h3 {font-family:'8bitoperator', 'Press Start 2P'; font-weight:normal;}
+
+a {
+    border-bottom:1px solid white;
+    text-decoration:none;
+    color:white;
+}
+ 
+small {font-size:8px;}
+big {font-size:12px;}
+ 
+ul {text-align:justify;}
+ul, ol {margin-left:-25px;}
+ 
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#credit {
+    position:fixed;
+    bottom:5px;
+    right:5px;
+    padding:8px;
+    border-radius:3px;
+    background-color:#111111;
+    color:#555555;
+    font-family:'VT323';
+    font-size:14px;
+    z-index:99999;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+}
+#credit:hover {
+    background-color:#CCCCCC;
+    color:black;
+}
+
+#characterimage {
+    position:fixed;
+    top:50%;
+    left:50%;
+    height:200px;
+    width:200px;
+    margin-top:-305px;
+    margin-left:-100px;
+            /*
+            |
+            | Add the link to the character image you want below
+            | Just replace the URL!
+            |
+            */
+    background-image:url('http://static.tumblr.com/o4povtk/VOGnyju3i/coolskeletondude.png');
+    background-position:bottom center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+#maincont {
+    position:fixed;
+    top:50%;
+    left:50%;
+    height:300px;
+    width:300px;
+    margin-top:-100px;
+    margin-left:-150px;
+    background-color:#000000;
+    border:solid 5px #FFFFFF;
+    overflow:hidden;
+}
+#heart {
+    position:absolute;
+    top:50%;
+    left:50%;
+    height:20px;
+    width:20px;
+    margin-top:-10px;
+    margin-left:-10px;
+    background-image:url('http://static.tumblr.com/o4povtk/Jlfnwf9g8/1heart.png');
+    background-size:cover;
+}
+
+#gameinfo {
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-top:210px;
+    margin-left:-200px;
+    font-family:"Mars Needs Cunnilingus", 'VT323';
+    font-size:16px;
+    text-transform:uppercase;
+}
+#gameinfo img {vertical-align:middle;}
+
+#aboutcont {
+    position:absolute;
+    left:0px;
+    height:260px;
+    width:460px;
+    background-color:black;
+    padding:20px 20px 20px 20px;
+    overflow-y:scroll;
+}
+#msgcont {
+    position:absolute;
+    left:500px;
+    height:260px;
+    width:450px;
+    background-color:black;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    padding:20px 25px 20px 25px;
+}
+#faqheader {
+    width:445px;
+    background-color:black;
+    color:white;
+    border:solid 1px white;
+    padding:10px 0px 10px 0px;
+    font-family:'8bitoperator', 'Press Start 2P';
+    font-size:12px;
+    text-transform:uppercase;
+    text-align:center;
+}
+#faqanswer {
+    width:405px;
+    padding:10px 30px 20px 30px;
+    font-size:12px;
+}
+
+#linklistcont {
+    position:absolute;
+    left:1000px;
+    background-color:black;
+    height:280px;
+    width:270px;
+    padding:10px 115px 10px 115px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+#linklistheader {
+    clear:both;
+    width:250px;
+    background-color:black;
+    color:white;
+    border:solid 1px white;
+    padding:10px 0px 10px 0px;
+    font-family:'8bitoperator', 'Press Start 2P';
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:6px;
+}
+#linkbox {
+    width:230px;
+    padding:0px 20px 0px 15px;
+    background-color:white;
+}
+#linkboxlink {
+    float:left;
+    width:90px;
+    font-size:10px;
+    background-color:black;
+    margin:3px 5px 2px 5px;
+    padding:5px 5px 5px 5px;
+    text-align:center;
+}
+
+#mainnavcont {
+    position:fixed;
+    top:50%;
+    left:50%;
+    height:20px;
+    width:520px;
+    margin-top:240px;
+    margin-left:-250px;
+}
+
+#mainlink {
+    float:left;
+    width:85px;
+    height:30px;
+    padding:0px 2px 0px 2px;
+    border:solid 2px #F68228;
+    margin-right:11px;
+}
+#mainlink:hover {border:solid 2px #FFF434;}
+.navhome, .navabout, .navmsg, .navlinks, .navblogs {
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.navhome {background-image:url('http://static.tumblr.com/o4povtk/y0Knxid6w/ni1.png');}
+.navabout {background-image:url('http://static.tumblr.com/o4povtk/HS2nyj8j8/about.png');}
+.navmsg {background-image:url('http://static.tumblr.com/o4povtk/wpenyjcd4/faq.png');}
+.navlinks {background-image:url('http://static.tumblr.com/o4povtk/Tmhnyjcev/links.png');}
+.navblogs {background-image:url('http://static.tumblr.com/o4povtk/nsynyjcat/blogs.png');}
+
+.navhome:hover {background-image:url('http://static.tumblr.com/o4povtk/mignxid7i/ni1h.png');}
+.navabout:hover {background-image:url('http://static.tumblr.com/o4povtk/7TNnyjcq3/abouth.png');}
+.navmsg:hover {background-image:url('http://static.tumblr.com/o4povtk/iAgnyjdlt/faqh.png');}
+.navlinks:hover {background-image:url('http://static.tumblr.com/o4povtk/Rolnyjdqe/linksh.png');}
+.navblogs:hover {background-image:url('http://static.tumblr.com/o4povtk/mjOnyjdwr/blogsh.png');}
+
+
+#blogrollcont {
+    position:absolute;
+    left:1500px;
+    width:470px;
+    height:260px;
+    padding:20px 15px 20px 15px;
+    background-color:black;
+    overflow-y:scroll;
+}
+
+.brblog {
+    float:left;
+    margin:5px;
+}
+</style>
+<script>
+    $(document).tooltip({
+    track: true,
+    tooltipClass: "tooltiptheme"
+});
+</script>
+</head>
+<body>
+    <div style="display:none;"><img src="http://static.tumblr.com/o4povtk/y0Knxid6w/ni1.png"><img src="http://static.tumblr.com/o4povtk/7TNnyjcq3/abouth.png"><img src="http://static.tumblr.com/o4povtk/iAgnyjdlt/faqh.png"><img src="http://static.tumblr.com/o4povtk/Rolnyjdqe/linksh.png"><img src="http://static.tumblr.com/o4povtk/mjOnyjdwr/blogsh.png"></div>
+    <div id="characterimage"></div>
+    <div id="maincont">
+        <div id="heart"></div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--    Stuff to edit starts here!!    -->
+        
+        
+        
+        
+        
+        
+        
+        <!--
+        |
+        | Here is the about tab!
+        | Fill in whatever you like below
+        | Put paragraphs between <p> and </p>
+        | Use <br> for a line break
+        |
+        -->
+        <div id="aboutcont" style="display:none;">
+            <h3>* Put a title here or delete this line</h3>
+            
+            <p>You can talk about yourself here. Think of what Mettaton might say about himself and use that as a guideline. c:</p>
+            
+            <p><b>Bold</b> <i>Italic</i> <u>Underline</u> <s>Strikethrough</s><br>On a new line</p>
+            
+            <p>An re ponitur veritas halitus du etiamsi quinque quatuor me. Seipso necdum de bitavi at ad. Errem rei solus tur debet nempe. At to ut ut superest callidum quidquam. Fallebar superest gi aliosque ii. Materiam ob momentum existens de immorari.</p>
+
+            <p>Ullo fore suo imo novo fas quid meam fit. Ab quovis tribuo certis is juvare posset fuerim. Vi mentes at inquam ha mutata reipsa quanta in. Curant colore ea contra et deesse. Ii materia degenda to sentire si in diutius fructum ultimum. Formaliter indefinite potentiali at in ex occurrebat catholicae id expectabam. Opiniones at credibile ad in omniscium.</p>
+
+            <p>Ha et diligenter devenietur perspicuae indefinite de at scripturis. Otium rem pauca nobis fit quies. Utcunque ut ha universo falsitas et odoratum. Et eo naturalis remotiora ei re recurrunt distincte objectiva eversioni. Hauriantur si expergisci mutationum praemissae re at mo. Usu admovetur ego mem aggredior mentemque potestque.</p>
+            
+        
+        <!--    END ABOUT TAB    -->
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <!--
+        |
+        | Here is the FAQ tab!
+        | Follow the template and add as many questions as you like.
+        | IMPORTANT! Make sure you fill in your URL towards the end!
+        |
+        -->
+        <div id="msgcont" style="display:none;">
+            <div id="faqheader">* Who is your favourite Undertale character?</div>
+            <div id="faqanswer">
+                <p>They're all so cute! I can't help but pick just one *cough*ilovesans*cough* But seriously they're all so great!</p>
+            </div>
+            
+            <div id="faqheader">* Question goes here</div>
+            <div id="faqanswer">
+                <p>Answer here.</p>
+            </div>
+            
+            <div id="faqheader">* Question goes here</div>
+            <div id="faqanswer">
+                <p>Answer here.</p>
+            </div>
+            
+        <!-- END FAQ TAB  -->
+            
+            <!--    Fill in your URL where it says BLOGURL     -->
+            <iframe frameborder="0" height="190" id="ask_form" scrolling="no" src="http://www.tumblr.com/ask_form/BLOGURL.tumblr.com" width="100%" style="background-color: transparent; overflow: hidden;"></iframe>
+        </div>
+        
+        
+        
+        
+        
+        
+        <!--
+        |
+        | This is the blogroll tab!
+        | You actually don't have to do anything here yaay
+        |
+        -->
+        <div id="blogrollcont" style="display:none;">
+            <h3>Blogroll</h3><br>{block:Following}{block:Followed}<a href="{FollowedURL}" target="_blank"><div class="brblog" title="{FollowedName}"><img src="{FollowedPortraitURL-48}"></div></a>{/block:Followed}{/block:Following}
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--
+        |
+        | This is the links tab!
+        |
+        | Follow the templates and add in the URL you want to link to
+        |  and the name of the link
+        | I added a couple examples for tags on your blog and another for
+        |  links on other websites, follow those
+        | There's also templates on the bottom you can use!
+        | Add as many links as you like
+        |
+        | This is a bit tricky so if you're having difficulty then make
+        |  sure to follow the customization guide if you're not sure!
+        |
+        -->
+        <div id="linklistcont" style="display:none;">
+        
+        
+        
+            <div id="linklistheader">Tags</div>
+            <div id="linkbox">
+                <a href="/tagged/undertale"><div id="linkboxlink">Undertale</div></a>
+                <a href="/tagged/frisk"><div id="linkboxlink">Frisk</div></a>
+                <a href="/tagged/papyrus"><div id="linkboxlink">Papyrus</div></a>
+                <a href="/tagged/sans"><div id="linkboxlink">Sans</div></a>
+                <a href="/tagged/napstablook"><div id="linkboxlink">Napstablook</div></a>
+                <a href="/tagged/mettaton"><div id="linkboxlink">Mettaton</div></a>
+            </div><div style="clear:both; height:20px;"></div>
+            
+            
+            
+            <div id="linklistheader">Some links outta here</div>
+            <div id="linkbox">
+                <a href="http://undertale.com/"><div id="linkboxlink">Check out Undertale</div></a>
+                <a href="http://raiidens.tumblr.com/tagged/themesbyraiidens"><div id="linkboxlink">More  super cool themes</div></a>
+            </div><div style="clear:both; height:20px;"></div>
+            
+            
+            
+            <div id="linklistheader">Header Title</div>
+            <div id="linkbox">
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+            </div><div style="clear:both; height:20px;"></div>
+            
+            
+            
+            <div id="linklistheader">Header Title</div>
+            <div id="linkbox">
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+                <a href="URL HERE"><div id="linkboxlink">Link name</div></a>
+            </div><div style="clear:both; height:20px;"></div>
+            
+            
+    <!--  END LINKS TAB  -->
+        </div>
+    </div><div style="clear:both;"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--
+    |
+    | This is where you can change the name "Frisk", LV, & HP
+    | Just replace them with what you want to add in
+    |
+    -->
+    <div id="gameinfo">
+        <table style="width:300px;"><tr><td>
+        
+        Frisk
+            
+        </td><td>
+        
+        LV 1
+            
+        </td><td width="20px;"></td><td><img src="http://static.tumblr.com/o4povtk/npDnwf8bm/1__0_00_00_00_.png" width="53px" height="20px"> 
+        
+        20 / 20
+            
+        </td></tr></table>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- nothing else to change! c: -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="mainnavcont">
+        <a href="/"><div id="mainlink" class="navhome"></div></a>
+        <a href="javaScript:void(0);"><div id="mainlink" class="navabout"></div></a>
+        <a href="javaScript:void(0);"><div id="mainlink" class="navmsg"></div></a>
+        <a href="javaScript:void(0);"><div id="mainlink" class="navlinks"></div></a>
+        <a href="javaScript:void(0);"><div id="mainlink" class="navblogs"></div></a>
+    </div>
+    <a href="http://raiidens.tumblr.com/tagged/themesbyraiidens"><div id="credit">theme</div></a>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var menuselected = -1;
+        var inMenu = false;
+    
+    
+
+        var pane = $('#maincont'),
+            box = $('#heart'),
+            w = pane.width() - box.width() + 10,
+            d = {},
+            x = 3;
+
+        function newv(v,a,b) {
+            var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
+            return n < 10 ? 10 : n > w ? w : n;
+        }
+
+        $(window).keydown(function(e) { d[e.which] = true; });
+        $(window).keyup(function(e) { d[e.which] = false; });
+
+        setInterval(function() {
+            box.css({
+                left: function(i,v) { return newv(v, 37, 39); },
+                top: function(i,v) { return newv(v, 38, 40); }
+            });
+        }, 20);
+        });
+        
+        $(document).keydown(function(e) {
+            switch (e.which) {
+                case 40:    //down key
+                    if ($("#heart").css("top") == "290px") {
+                        inMenu = true;
+                        aboutselected();
+                    }
+                    break;
+            }
+        });
+        
+        function homeselected () {
+            menuselected = 0;
+        }
+        function aboutselected() {
+            navopen();
+            
+            if (menuselected != 1) {
+                $("#aboutcont").animate({"left":"0px"}, 1000);
+                $("#msgcont").animate({"left":"500px"}, 1000);
+                $("#linklistcont").animate({"left":"1000px"}, 1000);
+                $("#blogrollcont").animate({"left":"1500px"}, 1000);
+            }
+            menuselected = 1;
+        }
+        function msgselected() {
+            navopen();
+            menuselected = 2;
+            
+            $("#aboutcont").animate({"left":"-500px"}, 1000);
+            $("#msgcont").animate({"left":"0px"}, 1000);
+            $("#linklistcont").animate({"left":"500px"}, 1000);
+            $("#blogrollcont").animate({"left":"1000px"}, 1000);
+        }
+        function linksselected() {
+            navopen();
+            menuselected = 3;
+            
+            $("#aboutcont").animate({"left":"-1000px"}, 1000);
+            $("#msgcont").animate({"left":"-500px"}, 1000);
+            $("#linklistcont").animate({"left":"0px"}, 1000);
+            $("#blogrollcont").animate({"left":"500px"}, 1000);
+        }
+        function brselected() {
+            navopen();
+            menuselected = 4;
+            
+            $("#aboutcont").animate({"left":"-1500px"}, 1000);
+            $("#msgcont").animate({"left":"-1000px"}, 1000);
+            $("#linklistcont").animate({"left":"-500px"}, 1000);
+            $("#blogrollcont").animate({"left":"0px"}, 1000);
+        }
+        
+        function navopen() {
+            $("#maincont").animate({"width":"500px", "margin-left":"-250px"}, 1000);
+            $("#heart").animate({"left":"+=101"}, 1000);
+            $("#aboutcont").fadeIn(1000);
+            $("#msgcont").fadeIn(1000);
+            $("#linklistcont").fadeIn(1000);
+            $("#blogrollcont").fadeIn(1000);
+        }
+    
+        $(".navabout").click(function() {
+            aboutselected();
+        });
+        $(".navmsg").click(function() {
+            msgselected();
+        });
+        $(".navlinks").click(function() {
+            linksselected();
+        });
+        $(".navblogs").click(function() {
+            brselected();
+        });
+    </script>
+</body>
+</html>
