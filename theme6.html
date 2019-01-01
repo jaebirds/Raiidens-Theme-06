@@ -6,8 +6,8 @@
  |
  |  Theme #6 by raiidens (@ tumblr)
  |  Published October 2015
- |  Updated November 2018
- |  Ver. 1.17
+ |  Updated January 2019
+ |  Ver. 1.18
  |
  |  Edit as much as you like, but please do not
  |  claim as your own work, and leave credit somewhere.
@@ -92,7 +92,7 @@
 <meta name="font:Sidebar font" content="'8bitoperator', 'Press Start 2P'">
 <meta name="font:Navigation font" content="'8bitoperator', 'Press Start 2P'">
 
-<link href='https://fonts.googleapis.com/css?family=Press+Start+2P|VT323' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Press+Start+2P|VT323' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
 <link href="//static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -602,6 +602,11 @@ ol.notes li.note{
 #pnext {{block:IfNotMirrorLayout}left:1050px;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}right:455px;{block:IfMirrorLayout}}
 #pprev {{block:IfNotMirrorLayout}left:475px;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}right:1040px;{/block:IfMirrorLayout}}
 #pnext:hover, #pprev:hover {color:{color:Pagination hover};}
+
+.post-content div.npf_row, .post div.npf_row {
+    max-width: 100%;
+    margin: 0;
+}
 </style>
 </head>
 <body>
@@ -622,7 +627,7 @@ ol.notes li.note{
         {block:IfLink3Title}<a href="{text:Link 3 URL}"><div id="navlink"><center>{text:Link 3 Title}</center></div></a>{/block:IfLink3Title}
         {block:IfLink4Title}<a href="{text:Link 4 URL}"><div id="navlink"><center>{text:Link 4 Title}</center></div></a>{/block:IfLink4Title}
     </div>{block:IfNotDisableMainNavIcons}<div id="mlink3ic"></div>{/block:IfNotDisableMainNavIcons}NAV</div></a>
-    <a href="http://raiidens.tumblr.com/tagged/themesbyraiidens"><div id="mlink4">{block:IfNotCustomizeMainNavButtons}<div id="mlink4f"></div><div id="mlink4fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink4ic"></div>{/block:IfNotDisableMainNavIcons}THEME</div></a>
+    <a href="https://raiidens.tumblr.com/tagged/themesbyraiidens"><div id="mlink4">{block:IfNotCustomizeMainNavButtons}<div id="mlink4f"></div><div id="mlink4fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink4ic"></div>{/block:IfNotDisableMainNavIcons}THEME</div></a>
 </div>
 
 {block:Pagination}
@@ -762,7 +767,7 @@ ol.notes li.note{
             {/block:Audio}
            
            
-            {block:Date}<table style="width:500px; color:{color:Post info};"><tr><td style="width:425px;">{block:IfAlwaysShowTags}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag}</a></span>{/block:Tags}{/block:HasTags}{/block:IfAlwaysShowTags}{block:IfNotAlwaysShowTags}{block:PermalinkPage}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag} </a></span>{/block:Tags}{/block:HasTags}{/block:PermalinkPage}{/block:IfNotAlwaysShowTags}</td>
+            {block:Date}<table style="width:500px; color:{color:Post info};"><tr><td style="width:425px;">{block:IfAlwaysShowTags}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag}</a></span>{/block:Tags}{/block:HasTags}{/block:IfAlwaysShowTags}{block:IfNotAlwaysShowTags}{block:PermalinkPage}{block:HasTags}Tags: {block:Tags}<span class="tags"><a href="{TagURL}">#{Tag}</a> </span>{/block:Tags}{/block:HasTags}{/block:PermalinkPage}{/block:IfNotAlwaysShowTags}</td>
             
             <td>
                 <ul class="rebloglike">
