@@ -10,8 +10,8 @@
  |
  |  Theme #6 by raiidens (@ tumblr)
  |  Published October 2015
- |  Updated January 2016
- |  Ver. 1.12
+ |  Updated February 2016
+ |  Ver. 1.13
  |
  |  Edit as much as you like, but please do not
  |  claim as your own work, and leave credit somewhere.
@@ -99,7 +99,7 @@
 <link href='https://fonts.googleapis.com/css?family=Press+Start+2P|VT323' rel='stylesheet' type='text/css'>
 
 {block:IfInfiniteScrolling}
-<script type="text/javascript" src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
+<script type="text/javascript" src="http://static.tumblr.com/o4povtk/zYLo1itkm/codyshermaninfscroll.js"></script>
 {/block:IfInfiniteScrolling}
 
 <style type="text/css">
@@ -122,18 +122,19 @@
     border: 1px double {color:Scrollbar border};
 }
  
-iframe#tumblr_controls {
+.tmblr-iframe {
     top:3px !important;
     right:3px !important;
     position:fixed !important;
     opacity: 0.3;
+	z-index: 999999 !important;
     -webkit-transform: translateZ(0);
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
-iframe#tumblr_controls:hover {opacity: 1.0;}
+.tmblr-iframe:hover {opacity: 1.0;}
 *::selection {background-color:{color:Text highlight background}; color:{color:Text highlight};}
 *::-moz-selection {background-color:{color:Text highlight background}; color:{color:Text highlight};}
 *::-webkit-selection {background-color:{color:Text highlight background}; color:{color:Text highlight};}
