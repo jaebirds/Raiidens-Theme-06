@@ -11,7 +11,7 @@
  |  Theme #6 by raiidens (@ tumblr)
  |  Published October 2015
  |  Updated November 2015
- |  Ver. 1.08
+ |  Ver. 1.09
  |
  |  Edit as much as you like, but please do not
  |  claim as your own work, and leave credit somewhere.
@@ -76,6 +76,9 @@
 <meta name="color:Pagination hover" content="#F68228">
 
 <meta name="text:Your name" content="Frisk">
+<meta name="text:LV" content="1">
+<meta name="text:HP" content="20">
+
 <meta name="text:Link 1 Title" content="Link 1">
 <meta name="text:Link 1 URL" content="">
 <meta name="text:Link 2 Title" content="Link 2">
@@ -575,7 +578,7 @@ ol.notes li.note{
     <div id="desc">{Description}</div>
     </div>
     {block:IfNotDisableBattleInfo}<div id="ginfo">
-        <table style="width:300px;"><tr><td>{text:Your name}</td><td>LV 1</td><td width="20px;"></td><td><img src="http://static.tumblr.com/o4povtk/npDnwf8bm/1__0_00_00_00_.png" width="53px" height="20px"> 20 / 20</td></tr></table>
+        <table style="width:300px;"><tr><td>{text:Your name}</td><td>LV {text:LV}</td><td width="20px;"></td><td><img src="http://static.tumblr.com/o4povtk/npDnwf8bm/1__0_00_00_00_.png" width="53px" height="20px"> {text:HP} / {text:HP}</td></tr></table>
     </div>{/block:IfNotDisableBattleInfo}
     <a href="/"><div id="mlink1">{block:IfNotCustomizeMainNavButtons}<div id="mlink1f"></div><div id="mlink1fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink1ic"></div>{/block:IfNotDisableMainNavIcons}HOME</div></a>
     <a href="/ask"><div id="mlink2">{block:IfNotCustomizeMainNavButtons}<div id="mlink2f"></div><div id="mlink2fh"></div>{/block:IfNotCustomizeMainNavButtons}{block:IfNotDisableMainNavIcons}<div id="mlink2ic"></div>{/block:IfNotDisableMainNavIcons}ASK</div></a>
@@ -608,7 +611,7 @@ ol.notes li.note{
  
             {block:Photo}
             <div class="photo">
-            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+            {block:HighRes}<a href="{PhotoURL-HighRes}" target="_blank">{/block:HighRes}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{block:HighRes}</a>{/block:HighRes}
             {block:IfShowCaptions}
             {block:Caption}
             <div class="caption">{Caption}</div>
@@ -701,14 +704,15 @@ ol.notes li.note{
  
             {block:Audio}
             <div class="audio">
-            {block:AlbumArt}
-            <img src="{AlbumArtURL}">
-            {/block:AlbumArt}
-            {AudioPlayer}
-            {block:trackname}<div class="aline"><b>track name:</b> {trackname}</div>{/block:trackname}
+            {block:AlbumArt}<div style="float:left;"><img src="{AlbumArtURL}" width="150" height="150"></div>{/block:AlbumArt}
+            <div style="position:relative; left:10px; top:5px">
+    {block:trackname}<div class="aline"><b>track name:</b> {trackname}</div>{/block:trackname}
             {block:artist}<div class="aline"><b>artist:</b> {artist}</div>{/block:artist}
             {block:album}<div class="aline"><b>album:</b> {album}</div>{/block:album}
             {block:playcount}<div class="aline"><b>play count:</b> {playcount}</div>{/block:playcount}
+            </div>
+            <div style="clear:both;"></div>
+            {block:AudioPlayer}{AudioPlayerBlack}{/block:AudioPlayer}
             {block:IfShowCaptions}
             {block:Caption}
             <div class="caption">{Caption}</div>
