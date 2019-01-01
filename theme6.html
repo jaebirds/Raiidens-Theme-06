@@ -10,8 +10,8 @@
  |
  |  Theme #6 by raiidens (@ tumblr)
  |  Published October 2015
- |  Updated December 2015
- |  Ver. 1.11
+ |  Updated January 2016
+ |  Ver. 1.12
  |
  |  Edit as much as you like, but please do not
  |  claim as your own work, and leave credit somewhere.
@@ -374,11 +374,11 @@ ol.notes li.note{
     width:500px;
     {block:IfNotMirrorLayout}
     left:50%;
-    margin-left:-150px;
+    //margin-left:-150px;
+    left:500px;
     {/block:IfNotMirrorLayout}
     {block:IfMirrorLayout}
-    right:50%;
-    margin-right:-150px;
+    right:500px;
     {/block:IfMirrorLayout}
     z-index:99;
     -webkit-transition: all 0.7s ease-in-out;
@@ -419,7 +419,7 @@ ol.notes li.note{
     max-height:59px;
     font-size:10px;
     padding:3px 3px 3px 3px;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 #desc a {color:{color:Sidebar link};}
 #desc::-webkit-scrollbar {
@@ -563,16 +563,14 @@ ol.notes li.note{
     height:40px;
     font-size:25px;
     color:{color:Pagination};
-    {block:IfNotMirrorLayout}left:50%;{/block:IfNotMirrorLayout}
-    {block:IfMirrorLayout}right:50%;{/block:IfMirrorLayout}
     text-align:center;
 	z-index:999999;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
 }
-#pnext {{block:IfNotMirrorLayout}margin-left:400px;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}margin-right:-185px;{block:IfMirrorLayout}}
-#pprev {{block:IfNotMirrorLayout}margin-left:-175px;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}margin-right:380px;{/block:IfMirrorLayout}}
+#pnext {{block:IfNotMirrorLayout}left:1050px;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}right:455px;{block:IfMirrorLayout}}
+#pprev {{block:IfNotMirrorLayout}left:475px;{/block:IfNotMirrorLayout}{block:IfMirrorLayout}right:1040px;{/block:IfMirrorLayout}}
 #pnext:hover, #pprev:hover {color:{color:Pagination hover};}
 </style>
 </head>
